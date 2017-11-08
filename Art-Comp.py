@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 import requests
 from bs4 import BeautifulSoup
+import search_google.api
 
 
 #Defines link to grab data from
@@ -11,12 +12,19 @@ r = requests.get(link)
 data = r.text
 
 #soups the entire webpage
-soup = (BeautifulSoup(data))
+soup = (BeautifulSoup(data, "lxml"))
 
 #sets <p> wrapped data to variable paragraphs
 paragraphs = str((soup.find_all('p')))
 
-print(paragraphs)
+#Stores the title of the article for searching
+aTitle = soup.title
+
+
+
+print(aTitle)
+
+print(search_google(aTitle))
 #Writes paragraphs to file
 #file=open("NewFile.txt", "w")
 #file.write(paragraphs)
