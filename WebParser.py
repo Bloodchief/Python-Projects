@@ -14,8 +14,8 @@ data = r.text
 soup = (BeautifulSoup(data))
 
 #sets <p> wrapped data to variable paragraphs
-paragraphs = (soup.find_all('p'))
-paragraphs.prettify()
+paragraphs = str((soup.find_all('p')))
+
 print(paragraphs)
 #Writes paragraphs to file
 #file=open("NewFile.txt", "w")
