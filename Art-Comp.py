@@ -18,13 +18,21 @@ soup = (BeautifulSoup(data, "lxml"))
 paragraphs = str((soup.find_all('p')))
 
 #Stores the title of the article for searching
-aTitle = soup.title
+aTitle = soup.title.string
+
+try:
+	from google import search
+except ImportError:
+	print("No google module")
+
+#search google
+
+query = aTitle
 
 
-
-print(aTitle)
-
-print(search_google(aTitle))
+for i in search(query, tld="co.in", num=10, stop=1, pause=2):
+	print(i)
+	
 #Writes paragraphs to file
 #file=open("NewFile.txt", "w")
 #file.write(paragraphs)
