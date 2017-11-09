@@ -5,7 +5,7 @@ import search_google.api
 
 
 #Defines link to grab data from
-link = "http://www.foxnews.com/politics/2017/11/06/democrat-walks-out-moment-silence-for-texas-massacre-victims.html"
+link = "http://thehill.com/policy/technology/359474-justice-att-trade-accusations-over-cnn-sale"
 r = requests.get(link)
 
 #Assigns page to 'data'
@@ -20,6 +20,11 @@ paragraphs = str((soup.find_all('p')))
 #Stores the title of the article for searching
 aTitle = soup.title.string
 
+#bullshit that doesn't seem to narrow sites down, instead it just gives like 30 thehill.com links
+#+ "sites: www.foxnews.com, www.cnn.com, abcnews.go.com, www.yahoo.com/news, www.thehill.com, www.huffingtonpost.com"
+
+print(aTitle)
+
 try:
 	from google import search
 except ImportError:
@@ -27,7 +32,8 @@ except ImportError:
 
 #search google
 
-query = aTitle
+query = aTitle 
+
 
 
 for i in search(query, tld="co.in", num=10, stop=1, pause=2):
