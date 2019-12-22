@@ -1,0 +1,35 @@
+Type: AD Password Reset.
+	Company: $input
+	Caller: $input
+	Number: $input
+	Business Service: Workstation Management
+	Category: Workstation Management
+	Subcategory: End User Support
+	State: In Progress
+	Impact: 3-low
+	Urgency: 3-low
+	Assignment Group: System Tech 1
+	Assigned to: $username (the name used to credential the REST)
+	Short Description: AD - Password Reset
+	Description: $input, AD Password Reset, or press enter to skip
+	Comments(Customer Visible) Verified user ID. Connected into AD and reset $user's password to default password. Tested password with $user over the phone successfully. Resolving ticket.
+
+Type: Other Password Reset.
+	Company: $input
+	Caller: $input
+	Number: $input
+	Business Service: Workstation Management
+	Category: Workstation Management
+	Subcategory: End User Support
+	State: In Progress
+	Impact: 3-low
+	Urgency: 3-low
+	Assignment Group: System Tech 1
+	Assigned to: $username (the name used to credential the REST requests MINUS the @vology.com)
+	Short Description: $INPUT - Password Reset
+	Connected into password reset tool for $INPUT_APPLICATION and reset to default. Tested password with $user over the phone successfully. Resolving ticket.
+
+Type: AD User account creation.
+	Connected into AD and created $user's account per specification. Emailed credentials to $ticket_requestor.
+
+Type:
